@@ -1,6 +1,4 @@
-      - name: Build APK with Buildozer
-        run: yes | buildozer android debug
-
+name: Build Android APK
 
 on:
   push:
@@ -27,7 +25,7 @@ jobs:
           pip install --upgrade buildozer cython virtualenv --break-system-packages
 
       - name: Build APK with Buildozer
-        run: buildozer android debug
+        run: yes | buildozer android debug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
