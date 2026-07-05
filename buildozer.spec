@@ -12,13 +12,17 @@ requirements = python3,kivy,requests,urllib3
 orientation = portrait
 fullscreen = 0
 
-# Important: Android permissions required for downloading and sending payloads
+# Android permissions required for downloading and sending payloads
 android.permissions = INTERNET, ACCESS_NETWORK_STATE
 
 # Architecture for modern Android devices
 android.archs = arm64-v8a, armeabi-v7a
 android.api = 33
 android.minapi = 21
+
+# Fixes for headless GitHub Actions build (SDK license and modern branch)
+android.accept_sdk_license = True
+p4a.branch = master
 
 [buildozer]
 log_level = 2
